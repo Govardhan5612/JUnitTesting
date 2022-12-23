@@ -33,4 +33,8 @@ public class RegularExpression {
         boolean status = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%&*]).{8,}$").matcher(password).matches();
         return status;
     }
+    public boolean emailSamples(String email){
+        boolean status = Pattern.compile("[a-z]{3,}[-.+]{0,1}[10]{0,3}[@]{1}[10]{0,3}[a-z]{0,5}[.]{0,1}[a-z]{0,3}[,.]{0,1}[a-z]{0,3}").matcher(email).matches();
+        return status;
+    }
 }

@@ -1,6 +1,8 @@
 package com.bridgelabz;
 
 import org.junit.Test;
+import org.junit.runners.Parameterized;
+
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -46,6 +48,14 @@ public class RegularExpressionTest {
         String passsword = "Muni@12345";
         boolean status = regex.password(passsword);
         assertTrue(status);
+    }
+
+    @Parameterized.Parameters
+    public void teat_emailSamples() {
+        String[] emails = {"abc@yahoo.com,", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc+100@gmail.com", "abc111@abc.com,", "abc-100@abc.net,", "abc-100@abc.net,", "abc@1.com,", "abc@gmail.com.com"};
+        for (int i =0;i<emails.length;i++){
+            assertTrue(regex.emailSamples(emails[i]));
+        }
     }
 
 }
